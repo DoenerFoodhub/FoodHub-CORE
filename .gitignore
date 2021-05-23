@@ -6,3 +6,4 @@ KaindorfFoodhub
 *.so
 *.dylib
 *.dll
+*.dist
