@@ -8,14 +8,25 @@ CREATE TABLE users (
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
     password TEXT NOT NULL,
-    is_admin INT2 NOT NULL,
     class TEXT NOT NULL,
     FOREIGN KEY(class) REFERENCES classes(class)
+);
+
+CREATE TABLE admins (
+    id INTEGER PRIMARY KEY,
+    FOREIGN KEY(id) REFERENCES users(id)
+);
+
+CREATE TABLE admin_classes (
+    admin_id INTEGER,
+    class TEXT,
+    PRIMARY KEY(admin_id, class)
 );
 
 CREATE TABLE orders (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     created_on DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    is_done INT2 NOT NULL DEFAULT 0
     user_id INTEGER NOT NULL,
     FOREIGN KEY(user_id) REFERENCES users(id)
 );

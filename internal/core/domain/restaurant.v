@@ -1,4 +1,6 @@
-pub fn Restaurant {
+module domain
+
+pub struct Restaurant {
 	pub:
 		id int
 

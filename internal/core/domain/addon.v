@@ -1,4 +1,6 @@
-pub fn Addon {
+module domain
+
+pub struct Addon {
 	pub:
 		id int
 
